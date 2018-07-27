@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Repository from '../Repository';
-import { Container, Form } from './styles';
 import api from '../../services/api';
+import { Container, Form } from './styles';
 
 class SideBar extends Component {
     constructor(props) {
@@ -68,12 +69,19 @@ class SideBar extends Component {
 
                 <ul>
                     {repositories.map(repository => (
-                        <li key={repository.id} onClick={e => handleFecthIssues(e, repository)}>
+                        <li>
+                            <div
+                                key={repository.id}
+                                onClick={e => handleFecthIssues(e, repository)}
+                                onKeyUp={this.handleKeyUp}
+                                role="presentation"
+                            >
                             <Repository repository={repository} />
 
                             <span className="arrow">
                                 <i className="fa fa-angle-right" />
                             </span>
+                            </div>
                         </li>
                     ))}
                 </ul>
@@ -81,5 +89,9 @@ class SideBar extends Component {
         );
     }
 }
+
+SideBar.propTypes = {
+    handleFecthIssues: PropTypes.func.isRequired,
+};
 
 export default SideBar;

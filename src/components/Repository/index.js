@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container } from './styles';
 
 const Repository = ({ repository }) => (
@@ -12,5 +13,15 @@ const Repository = ({ repository }) => (
         </div>
     </Container>
 );
+
+Repository.propTypes = {
+    repository: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        owner: PropTypes.shape({
+            avatar_url: PropTypes.string.isRequired,
+            login: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
+};
 
 export default Repository;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { cutString } from '../../helpers';
+import PropTypes from 'prop-types';
+import { substr } from '../../helpers';
 import { Container } from './styles';
 
 const Issue = ({ issue }) => (
@@ -7,7 +8,7 @@ const Issue = ({ issue }) => (
         <img src={issue.user.avatar_url} alt={issue.user.login} />
 
         <div className="info">
-            <div className="title">{cutString(issue.title, 20)}</div>
+            <div className="title">{substr(issue.title, 20)}</div>
 
             <div className="login">{issue.user.login}</div>
 
@@ -20,5 +21,16 @@ const Issue = ({ issue }) => (
         </div>
     </Container>
 );
+
+Issue.propTypes = {
+    issue: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        html_url: PropTypes.string.isRequired,
+        user: PropTypes.shape({
+            avatar_url: PropTypes.string.isRequired,
+            login: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
+};
 
 export default Issue;

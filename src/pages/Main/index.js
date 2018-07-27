@@ -7,33 +7,30 @@ import { Container } from './styles';
 class Main extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             loading: false,
-            state: 'all',
+            stateSelect: 'all',
             repository: {},
             issues: [],
         };
     }
 
-    handleFecthIssues = async (e, repository, state = 'all') => {
+    handleFecthIssues = async (e, repository, stateSelect = 'all') => {
         this.setState({
             loading: true,
-            state,
+            stateSelect,
             repository: {},
         });
 
         try {
             const { data: issues } = await api.get(
-                `/repos/${repository.full_name}/issues?state=${state}`,
+                `/repos/${repository.full_name}/issues?state=${stateSelect}`,
             );
 
             this.setState({
                 repository,
                 issues,
             });
-        } catch (err) {
-            alert('aqui');
         } finally {
             this.setState({ loading: false });
         }
@@ -41,7 +38,7 @@ class Main extends Component {
 
     render() {
         const {
-            repository, loading, issues, state,
+            repository, loading, issues, stateSelect,
         } = this.state;
 
         return (
@@ -51,7 +48,7 @@ class Main extends Component {
                   repository={repository}
                   loading={loading}
                   issues={issues}
-                  state={state}
+                  stateSelect={stateSelect}
                   handleFecthIssues={this.handleFecthIssues}
                 />
             </Container>

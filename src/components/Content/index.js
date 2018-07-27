@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Repository from '../Repository';
 import Issue from '../Issue';
 import {
@@ -6,7 +7,7 @@ import {
 } from './styles';
 
 const Content = ({
-    repository, loading, issues, handleFecthIssues, state,
+    repository, loading, issues, handleFecthIssues, stateSelect,
 }) => (
     <Container>
         <Header>
@@ -18,7 +19,7 @@ const Content = ({
 
             <div className="state">
                 <select
-                  value={state}
+                  value={stateSelect}
                   onChange={e => handleFecthIssues(e, repository, e.target.value)}
                 >
                     <option value="all">Todas</option>
@@ -39,5 +40,13 @@ const Content = ({
         )}
     </Container>
 );
+
+Content.propTypes = {
+    repository: PropTypes.PropTypes.shape().isRequired,
+    loading: PropTypes.bool.isRequired,
+    issues: PropTypes.arrayOf().isRequired,
+    handleFecthIssues: PropTypes.func.isRequired,
+    stateSelect: PropTypes.string.isRequired,
+};
 
 export default Content;
