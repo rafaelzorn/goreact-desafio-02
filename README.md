@@ -30,6 +30,9 @@ yarn start
 
 ## Screenshots
 
+![Screenshot 1](https://image.ibb.co/joO9b8/screenshot.png)
+
 ## Construído com
 
--   [React](https://reactjs.org/)
+-   [React](https://reactjs.org)
+-   [Axios](https://github.com/axios/axios)

@@ -9,6 +9,7 @@ export const Container = styled.div`
         margin-right: 10px;
         width: 45px;
         height: 45px;
+        border-radius: 5px;
     }
 
     .info {

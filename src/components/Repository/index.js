@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container } from './styles';
 
-const Repository = () => (
+const Repository = ({ repository }) => (
     <Container>
-        <img src="https://avatars3.githubusercontent.com/u/69631?v=4" />
+        <img src={repository.owner.avatar_url} alt={repository.name} />
 
         <div className="info">
-            <span className="technology">react</span>
+            <span className="technology">{repository.name}</span>
             <br />
-            <span className="company">Facebook</span>
+            <span className="company">{repository.owner.login}</span>
         </div>
     </Container>
 );
