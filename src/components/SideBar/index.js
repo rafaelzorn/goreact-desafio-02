@@ -52,10 +52,10 @@ class SideBar extends Component {
             <Container>
                 <Form withError={repositoryError} onSubmit={this.handleAddRepository}>
                     <input
-                      type="text"
-                      placeholder="Novo repositório"
-                      value={repositoryInput}
-                      onChange={e => this.setState({ repositoryInput: e.target.value })}
+                        type="text"
+                        placeholder="Novo repositório"
+                        value={repositoryInput}
+                        onChange={e => this.setState({ repositoryInput: e.target.value })}
                     />
 
                     <button type="submit">
@@ -69,18 +69,17 @@ class SideBar extends Component {
 
                 <ul>
                     {repositories.map(repository => (
-                        <li>
+                        <li key={repository.id}>
                             <div
-                                key={repository.id}
                                 onClick={e => handleFecthIssues(e, repository)}
                                 onKeyUp={this.handleKeyUp}
                                 role="presentation"
                             >
-                            <Repository repository={repository} />
+                                <Repository repository={repository} />
 
-                            <span className="arrow">
-                                <i className="fa fa-angle-right" />
-                            </span>
+                                <span className="arrow">
+                                    <i className="fa fa-angle-right" />
+                                </span>
                             </div>
                         </li>
                     ))}

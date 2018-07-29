@@ -19,8 +19,8 @@ const Content = ({
 
             <div className="state">
                 <select
-                  value={stateSelect}
-                  onChange={e => handleFecthIssues(e, repository, e.target.value)}
+                    value={stateSelect}
+                    onChange={e => handleFecthIssues(e, repository, e.target.value)}
                 >
                     <option value="all">Todas</option>
                     <option value="open">Abertas</option>
@@ -44,7 +44,7 @@ const Content = ({
 Content.propTypes = {
     repository: PropTypes.PropTypes.shape().isRequired,
     loading: PropTypes.bool.isRequired,
-    issues: PropTypes.arrayOf().isRequired,
+    issues: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     handleFecthIssues: PropTypes.func.isRequired,
     stateSelect: PropTypes.string.isRequired,
 };

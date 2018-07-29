@@ -45,11 +45,11 @@ class Main extends Component {
             <Container>
                 <SideBar handleFecthIssues={this.handleFecthIssues} />
                 <Content
-                  repository={repository}
-                  loading={loading}
-                  issues={issues}
-                  stateSelect={stateSelect}
-                  handleFecthIssues={this.handleFecthIssues}
+                    repository={repository}
+                    loading={loading}
+                    issues={issues}
+                    stateSelect={stateSelect}
+                    handleFecthIssues={this.handleFecthIssues}
                 />
             </Container>
         );
