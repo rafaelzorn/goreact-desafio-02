@@ -19,7 +19,7 @@ cd goreact-desafio-02
 Instalar as dependências do projeto:
 
 ```
-yarn install
+yarn
 ```
 
 Por fim, execute o servidor de desenvolvimento e o aplicativo deve estar disponível na seguinte URL: http://localhost:8080
