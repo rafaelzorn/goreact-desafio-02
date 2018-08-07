@@ -22,7 +22,7 @@ Instalar as dependências do projeto:
 yarn
 ```
 
-Por fim, execute o servidor de desenvolvimento e o aplicativo deve estar disponível na seguinte URL: http://localhost:8080
+Por fim, execute o servidor de desenvolvimento e o aplicativo deve estar disponível na seguinte URL: http://localhost:3000
 
 ```
 yarn start
