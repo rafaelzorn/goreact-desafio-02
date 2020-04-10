@@ -1,38 +1,31 @@
-# Rocketseat GoReact 2º Desafio
+<p align="center">
+  <h3 align="center">2rd Rocketseat GoReact Challenge</h3>
+</p>
 
-2º desafio do curso GoReact da Rocketseat.
+---
 
-### Instalando
+## Overview
 
-Primeiro você tem que usar o seu Terminal para chegar ao diretório que você deseja armazenar o projeto. Então você executa:
+2rd challenge of the Rocketseat GoReact course.
 
-```
-git clone git@github.com:rafaelzorn/goreact-desafio-02.git
-```
+## Preview
 
-Acesse o diretório criado e você estará no diretório-raiz do projeto:
+![preview-1](./preview-1.png)
 
-```
-cd goreact-desafio-02
-```
+### APIs
 
-Instalar as dependências do projeto:
+- [Github API](https://api.github.com)
 
-```
-yarn
-```
+## Running the project
 
-Por fim, execute o servidor de desenvolvimento e o aplicativo deve estar disponível na seguinte URL: http://localhost:3000
+- Clone this repository
+- Install all dependencies using the command `yarn`
+- Run `yarn start`
+- Access `http://localhost:3000/`
 
-```
-yarn start
-```
+## Used technologies
 
-## Screenshots
-
-![Screenshot 1](https://image.ibb.co/joO9b8/screenshot.png)
-
-## Construído com
-
--   [React](https://reactjs.org)
--   [Axios](https://github.com/axios/axios)
+- React
+- Axios
+- Styled Component
+- Other React JS libs
